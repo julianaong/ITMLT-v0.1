@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style type="text/css"> 
+    table.center {
+    margin-left:auto; 
+    margin-right:auto;}
+    </style>
+</head>
+<header>
+</header>
+<body>
+  {% include "header.html" %}
+  <h1 style="font-family: chronos serif;margin-bottom: 20px;">Products</h1>
+
+  <table class="center" style="text-align: center">
+    <tr><th>Code</th><th>Name</th><th>Price</th></tr>
+    
+    {% for product in product_list %}
+    <form action="/addtocart" method="POST">
+	    <tr>
+	    	<td>
+	    		<a style=padding-top:30px; href="productdetails?code={{product["code"]}}">{{product["code"]}}
+	    		</a>
+	    	</td>
+	    	<td>{{product["name"]}}</td>
+	    	<td>{{product["price"]}}</td>
+	    	<!-- <td colspan="2"><input type="submit" name="Add to Cart" value="+"></input></td>
+	    	<td colspan="2"><input type="submit" name="Remove" value="-"></input></td> -->
+	    </tr>
+	</form>
+    {% endfor %}
+
+  </table>
+  {% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <style type="text/css"> 
+    li.center {
+    margin-left:auto; 
+    margin-right:auto;}
+    </style>
+</head>
+<header>
+</header>
+<body>
+  {% include "header.html" %}
+  <h1 style="font-family: chronos serif;">Branches</h1>
+  <ul>
+    {% for branch in branch_list %}
+    <li class="center"><a href="branchdetails?code={{branch["code"]}}"> {{branch["name"]}}</a></li>
+      {% endfor %}
+  </ul>
+
+  {% include "footer.html" %}
+</body>
+</html>

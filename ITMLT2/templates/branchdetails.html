@@ -1,0 +1,21 @@
+<html>
+    <head>
+    <style type="text/css"> 
+    table.center {
+    margin-left:auto; 
+    margin-right:auto;}
+    </style>
+</head>
+<header>
+</header>
+<body>
+  {% include "header.html" %}
+  <h1 style="font-family: chronos serif;">Branch Details</h1>
+  <table class="center" style="text-align:center">
+    <tr><td>Name</td><td><i>{{branch["name"]}}</i></td></tr>
+    <tr><td>Phone Number</td><td><i>{{branch["phonenumber"]}}</i></td></tr>
+  </table>
+  <a href="/branches">Back</a>
+  {% include "footer.html" %}
+</body>
+</html>

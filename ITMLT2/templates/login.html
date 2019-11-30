@@ -1,0 +1,36 @@
+{% include "header.html" %}
+
+<head> <style type="text/css">
+     .product-image {
+                height: 220px;
+                 background-color:beige;
+            }
+     .img-container {
+        text-align: center;
+                margin-bottom: 30;background-color:beige;
+    </style></head>
+<h1 style="font-family: chronos serif">Login</h1>
+
+<form action="/auth" method="POST">
+
+ <div class="img-container"><img src="/static/sign-up.png" alt="login" class="product-image" style="max-width:100%"><font color="red">{{loginerror}}</font></div>
+    
+
+ <div>
+   Username or email address
+ </div>
+
+ <input type="text" name="username"></input>
+ 
+ <div>
+   Password
+ </div>
+
+ <input type="password" name="password"></input>
+
+ <div>
+   <input type="submit" value="Login"/>
+ </div>
+ 
+</form>
+{% include "footer.html" %}

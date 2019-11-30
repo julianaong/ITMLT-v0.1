@@ -1,0 +1,54 @@
+<html>
+<header>
+    
+ <style type="text/css">
+        
+.topnav {
+  overflow: hidden;
+    background-color: beige;font-family: avenir; padding: 20px;}
+     
+ 
+ .topnav a {
+     display: inline-block;;
+  color:cadetblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+         margin-bottom: 30;
+         margin-left: auto;
+         margin-right: auto;
+}
+
+     
+.topnav a:hover {
+  background-color:darkseagreen;
+  color: black;
+}
+.topnav a.active {
+  background-color:sienna;
+  color: blue;
+}
+.topnav .icon {
+  display: none;
+}
+     
+        </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</header>
+<body style="text-align: center; font-family: avenir; color: cadetblue; margin-bottom: 100">
+  <div class="topnav" id="myTopnav">
+    <a href='/'>Home</a>  <a href='/products'>Products</a> <a href='/branches'>Branches</a>  <a href='/aboutus'>About Us</a>  
+  {% if session["user"] is defined %}
+        Welcome, {{ session["user"]["first_name"] }}.
+        <a href='/cart'>View Cart</a> |
+        <a href='/orderhistory'>Past Orders</a> |
+        <a href='/changepassword'>Change Password</a>
+        <a href='/logout'>Logout</a>
+        {% else %}
+        <a href='/login'>Login</a>
+        {% endif %}
+
+
+  <p/>
