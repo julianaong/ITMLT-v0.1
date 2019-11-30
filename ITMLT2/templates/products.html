@@ -1,36 +1,81 @@
+
 <html>
-<head>
-    <style type="text/css"> 
-    table.center {
-    margin-left:auto; 
-    margin-right:auto;}
-    </style>
-</head>
 <header>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/
+  bootstrap/4.3.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style type="text/css"> 
+      {margin-right: auto; margin-left: auto;}
+    table.center {
+    text-align: center;
+    margin-left:100px; 
+    margin-right:auto;}
+      .product-image {
+                height: 230px;
+                 
+            }
+     .img-container {
+        text-align: center;
+         margin-bottom: 10;margin-top: -10;}
+      .w3-bar-block .w3-bar-item {padding:60px}
+      
+      img:not(#choices) {
+  border-radius: 50%;          
+} 
+      .checked {
+  color: orange;
+    </style>
+
 </header>
-<body>
-  {% include "header.html" %}
-  <h1 style="font-family: chronos serif;margin-bottom: 20px;">Products</h1>
-
-  <table class="center" style="text-align: center">
-    <tr><th>Code</th><th>Name</th><th>Price</th></tr>
     
-    {% for product in product_list %}
-    <form action="/addtocart" method="POST">
-	    <tr>
-	    	<td>
-	    		<a style=padding-top:30px; href="productdetails?code={{product["code"]}}">{{product["code"]}}
-	    		</a>
-	    	</td>
-	    	<td>{{product["name"]}}</td>
-	    	<td>{{product["price"]}}</td>
-	    	<!-- <td colspan="2"><input type="submit" name="Add to Cart" value="+"></input></td>
-	    	<td colspan="2"><input type="submit" name="Remove" value="-"></input></td> -->
-	    </tr>
-	</form>
-    {% endfor %}
-
-  </table>
-  {% include "footer.html" %}
+<body style="background-color:cadetblue; font-family: avenir LT Std; color:khaki">
+      {% include "header.html" %}
+  <center>
+  <h1 style="font-family: Don José;text-align: center;font-size: 80px; color:firebrick">Stalls</h1>
+      <img id="choices" src="choices.png" width="230" class="product-image">
+  </center>
+    
+<center>
+    
+    <div style=" margin-left: 300; margin-top: 100px; background-color: ">
+    <div class="w3-quarter">
+      <img src="taverna.png" alt="taverna" style="width:300px;">
+      <h3><a href="taverna.html">Taverna</a></h3>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+      <p>Greek Cuisine serving spiced mediteranean Beef, Chicken, and Hummus.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="bigfat.jpg" alt="bigfat" style="width:300;">
+      <h3><a href="bigfat.html">Big Fat Rolls</a></h3>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      <p>Korean Cuisine serving Kani, Beef, and Chicken sushi rolls for on-the-go and rice meals as well.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="caged.png" alt="Chix" style="width:300;">
+      <h3><a href="caged.html">Caged Chicken</a></h3>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      <p>Classic Waffles with juicy fried chicken and a choice of preferred sauce or Dessert Wafles with sweet filling.</p>
+    </div>
+        </div>
+    </center>
+      
 </body>
 </html>
